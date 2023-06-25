@@ -83,11 +83,11 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "Progo",
+        "NAME": "railway",
         "USER": "postgres",
-        "PASSWORD": "1682005",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "PASSWORD": "Cp3bGudKNTT69DplVnRV",
+        "HOST": "containers-us-west-148.railway.app",
+        "PORT": "5736",
     }
 }
 
