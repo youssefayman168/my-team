@@ -145,3 +145,4 @@ MEDIA_URL = "/images/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles/images")
 
 AUTH_USER_MODEL = "users.User"
+CSRF_TRUSTED_ORIGINS = ["https://progo-apis.up.railway.app/"]
