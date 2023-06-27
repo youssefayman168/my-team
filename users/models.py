@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField("Full Name", max_length=255)
     email = models.EmailField("Email", unique=True)
-    phone_number = models.PositiveBigIntegerField("Phone Number")
+    phone_number = models.PositiveBigIntegerField("Phone Number", null=True)
     picture = models.ImageField("User's Picture", upload_to="users-pictures")
     is_active = models.BooleanField("Active", default=True)
     is_staff = models.BooleanField("Staff", default=False)

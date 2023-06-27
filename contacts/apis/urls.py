@@ -4,10 +4,10 @@ from .views.delete import delete_contact, trash_contact
 from .views.get import get_contact, get_all_contacts
 from .views.update import mark_contact_read, star_contact
 from .views.filters import (
-    get_seen_contats,
-    get_trashed_contats,
-    get_latest_contats,
-    get_starred_contats,
+    get_seen_contacts,
+    get_trashed_contacts,
+    get_latest_contacts,
+    get_starred_contacts,
 )
 
 urlpatterns = [
@@ -18,8 +18,8 @@ urlpatterns = [
     path("get-contacts/", get_all_contacts),
     path("read-contact/<int:contact_id>/", mark_contact_read),
     path("star-contact/<int:contact_id>/", star_contact),
-    path("seen-contacts/", get_seen_contats),
-    path("trashed-contacts/", get_trashed_contats),
-    path("latest-contacts/", get_latest_contats),
-    path("starred-contacts/", get_starred_contats),
+    path("seen-contacts/", get_seen_contacts),
+    path("trashed-contacts/", get_trashed_contacts),
+    path("latest-contacts/", get_latest_contacts),
+    path("starred-contacts/", get_starred_contacts),
 ]

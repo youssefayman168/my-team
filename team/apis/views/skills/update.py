@@ -7,7 +7,7 @@ from team.models import Skill
 
 @api_view(["POST"])
 @permission_classes([permissions.IsAdminUser])
-def update(request, skill_name):
+def update_skill(request, skill_name):
     name = request.data.get("newSkillName")
 
     if not name:
@@ -16,7 +16,7 @@ def update(request, skill_name):
         )
 
     try:
-        skill = Skill.objects.get(name=name)
+        skill = Skill.objects.get(name=skill_name)
     except Skill.DoesNotExist:
         return Response(
             {"message": "The skill with that name does not exist"},
@@ -36,6 +36,7 @@ def update(request, skill_name):
                 status=status.HTTP_400_BAD_REQUEST,
             )
         skill.name = name
+        skill.save()
         return Response(
             {"message": "Skill has updated successfully"}, status=status.HTTP_200_OK
         )

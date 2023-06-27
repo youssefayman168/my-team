@@ -20,6 +20,7 @@ class LoginView(TokenObtainPairView):
             refresh = serializer.validated_data.get("refresh", None)
 
             user = serializer.validated_data.get("user", None)
+            print("serializer", serializer)
 
             if access is not None:
                 return Response(

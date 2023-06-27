@@ -8,7 +8,7 @@ from team.apis.serializers import SectionSerializer
 
 @api_view(["GET"])
 @permission_classes([permissions.IsAdminUser])
-def get_all_section(request):
+def get_all_sections(request):
     try:
         sections = Section.objects.all()
         serializer = SectionSerializer(sections, many=True)

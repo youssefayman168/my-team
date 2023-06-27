@@ -12,7 +12,7 @@ from contacts.apis.serializers import ContactSerializer
     ]
 )
 @permission_classes([permissions.IsAdminUser])
-def get_latest_contats(request):
+def get_latest_contacts(request):
     try:
         contacts = Contact.objects.all().order_by("-sent_at")
         serializer = ContactSerializer(contacts, many=True)
@@ -30,7 +30,7 @@ def get_latest_contats(request):
     ]
 )
 @permission_classes([permissions.IsAdminUser])
-def get_read_contats(request):
+def get_seen_contacts(request):
     try:
         contacts = Contact.objects.filter(read=True)
         serializer = ContactSerializer(contacts, many=True)
@@ -48,7 +48,7 @@ def get_read_contats(request):
     ]
 )
 @permission_classes([permissions.IsAdminUser])
-def get_starred_contats(request):
+def get_starred_contacts(request):
     try:
         contacts = Contact.objects.filter(starred=True)
         serializer = ContactSerializer(contacts, many=True)
@@ -66,7 +66,7 @@ def get_starred_contats(request):
     ]
 )
 @permission_classes([permissions.IsAdminUser])
-def get_trashed_contats(request):
+def get_trashed_contacts(request):
     try:
         contacts = Contact.objects.filter(deleted=True)
         serializer = ContactSerializer(contacts, many=True)
